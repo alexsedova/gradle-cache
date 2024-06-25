@@ -93,7 +93,7 @@ This project provides a Kubernetes StatefulSet deployment for Gradle Build Cache
    The details of the applying custom configuration for build cache node is [here](https://docs.gradle.com/build-cache-node/#providing_a_config_file_from_a_secret_or_configmap) 
     - Make a secret for config.yaml file:
       ```
-      k create secret generic gradle-build-cache-config-secret -n build-cache --from-file=config.yaml
+      kubectl create secret generic gradle-build-cache-config-secret -n build-cache --from-file=config.yaml
       ```
     - You will use it as a volume to mount to InitialContainer
       ```yaml
@@ -145,7 +145,3 @@ Custom configurations are necessary to handle user authentication for pushing ca
 ## Contributions
 
 Feel free to contribute by submitting issues or pull requests.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
